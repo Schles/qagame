@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+      "target": "es5",
+      "module": "commonjs",
+      "noImplicitAny": true,
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "sourceMap": true,
+      "outDir": "build"
+  },
+    "files": [
+        "typings/index.d.ts",
+        "server/server.ts",
+        "server/routes/question.ts",
+        "server/routes/arch.ts",
+        "public/components/app.ts"
+    ],
+    "include": [
+
+
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

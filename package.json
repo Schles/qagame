@@ -1,0 +1,19 @@
+{
+  "name": "QAGame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^13.5.3",
+    "hapi-plugin-mysql": "^4.0.0",
+    "http": "0.0.0",
+    "inert": "^4.0.2",
+    "node-mysql-wrapper": "^2.9.3",
+    "q": "^1.4.1"
+  }
+}

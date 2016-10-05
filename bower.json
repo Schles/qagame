@@ -1,0 +1,23 @@
+{
+  "name": "QAGame",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular2-build": "latest",
+    "system.js": "latest",
+    "es6-shim": "^0.35.1"
+  },
+  "authors": [
+    "Patrick Schlesiona <mail@schles.me>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
