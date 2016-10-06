@@ -1,16 +1,16 @@
 module.exports = [
     {
         method: 'GET',
-        path:'/q/{qId}/{uId}',
-        handler: function (request:any, reply:any) {
+        path: '/q/{qId}/{uId}',
+        handler: function (request, reply) {
             console.log("q case");
             return reply.file("public/index.html");
         }
     },
     {
         method: 'GET',
-        path:'/a/{qId}',
-        handler: function (request:any, reply:any) {
+        path: '/a/{qId}',
+        handler: function (request, reply) {
             console.log("a case");
             return reply.file("public/index.html");
         }
@@ -21,17 +21,17 @@ module.exports = [
         handler: {
             directory: {
                 path: 'public',
-                 listing: true
+                listing: true
             }
         }
     },
-    //Debug
     {
         method: 'GET',
-        path:'/rx.js',
-        handler: function (request:any, reply:any) {
+        path: '/rx.js',
+        handler: function (request, reply) {
             console.log("will haben");
             return reply.file("public/libs/angular2-build/rx.js");
         }
     }
 ];
+//# sourceMappingURL=arch.js.map

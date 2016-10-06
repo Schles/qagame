@@ -5,8 +5,7 @@ var qRoute = require("./routes/question")
 
 const server = new Hapi.Server();
 
-server.connection({
-    host: 'localhost',
+server.connection({    
     port: 8000
 });
 

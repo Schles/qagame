@@ -1,22 +1,26 @@
 {
-  "compileOnSave": false,
+  "compileOnSave": true,
   "compilerOptions": {
-      "target": "es6",
+      "target": "es5",
       "module": "commonjs",
       "noImplicitAny": true,
       "removeComments": true,
       "preserveConstEnums": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
       "sourceMap": true
   },
     "files": [
         "typings/index.d.ts",
         "server/server.ts",
         "server/routes/question.ts",
-        "server/routes/arch.ts",
-        "public/components/app.ts"
+        "server/routes/arch.ts"
+
     ],
     "include": [
-
+        "public/app/*.ts",
+        "public/app/service/*.ts",
+        "public/app/component/*.ts"
 
     ],
     "exclude": [
