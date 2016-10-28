@@ -1,11 +1,12 @@
 import * as Hapi from 'hapi';
 
 var archRoute = require("./routes/arch");
-var qRoute = require("./routes/question")
+var qRoute = require("./routes/question");
+var adminRoute = require("./routes/admin");
 
 const server = new Hapi.Server();
 
-server.connection({    
+server.connection({
     port: 8000
 });
 
@@ -26,6 +27,7 @@ server.register([
 ], (err) => {
 
     server.route(qRoute);
+    server.route(adminRoute);
     server.route(archRoute);
 
     server.start((err) => {

@@ -14,13 +14,15 @@
         "typings/index.d.ts",
         "server/server.ts",
         "server/routes/question.ts",
+        "server/routes/admin.ts",
         "server/routes/arch.ts"
 
     ],
     "include": [
         "public/app/*.ts",
         "public/app/service/*.ts",
-        "public/app/component/*.ts"
+        "public/app/component/*.ts",
+        "public/app/guards/*.ts"
 
     ],
     "exclude": [

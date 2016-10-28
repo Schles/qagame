@@ -57,6 +57,7 @@ module.exports = [
                     answer.aText = results[1][0][i].answer;
 
                     if(results.length > 2){
+
                         if(results[2][0].length > 0){
                             answer.votes = 0;
                             for(var i in results[3][0]){
@@ -70,11 +71,27 @@ module.exports = [
                     result.answers.push(answer);
                 }
 
-
                 return reply(JSON.stringify(result));
                 //console.log(err);
                 //return reply('error ' + request.params['qId']);
             });
+        }
+    },
+    {
+        method: 'GET',
+        path:'/data/nextQ',
+        handler: function (request:any, reply:any) {
+            let authToken = request.headers["authtoken"];
+
+            request.app.db.query("SELECT id FROM `questions` as A LEFT JOIN ( SELECT qId, uId FROM `submitted` WHERE uId = '" + authToken + "') AS B on A.id = B.qId WHERE B.uId IS NULL", function(err, row, fields){
+
+                let indexNextQ = Math.floor((Math.random() * row.length));
+                let nextQ = row[indexNextQ].id;
+
+                return reply(nextQ);
+            });
+
+
         }
     },
     {

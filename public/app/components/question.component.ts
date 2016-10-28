@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { QuestionService } from '../service/question.service';
+import { AuthService } from '../service/auth.service';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Http } from '@angular/http';
 
 @Component({
   selector: 'question',
   template: `
+  <div class="question">
   <h1>{{question.qText}}</h1> <br>
   <ul>
        <li *ngFor="let answer of question.answers" (click)="setAnswer(answer.aId)">
@@ -21,42 +23,41 @@ import { Http } from '@angular/http';
 
           </div>
            <div class="clear"></div>
-
-
        </li>
   </ul><br>
   <div     *ngIf="question.voteCount > 0">
   VoteCount {{question.voteCount}}
+  </div>
+  <a (click)="nextQuestion()">Nächste Frage</a>
   </div>`,
-  providers: [QuestionService]
+  providers: [QuestionService, AuthService]
 })
 export class QuestionComponent implements OnInit{
 
-    private uId = 25;
+    private uId = 1;
+    private qId = 1;
+    private question = {};
 
-    constructor(private questionService:QuestionService, private route: ActivatedRoute){
-        this.question = {};
+    constructor(private questionService:QuestionService,
+                private authService:AuthService,
+                private router: Router,
+                private route: ActivatedRoute){
     }
 
     ngOnInit() {
-        console.log("init");
 
-        this.uId = this.route.snapshot.params.uId;
-        let qId = this.route.snapshot.params.id;
+        this.uId = this.authService.getUserId();
 
-        this.questionService.getQuestion(this.uId, qId).subscribe(
-            data => this.question = data,
-            error => this.error = "error"
-        );
+        this.route.params.forEach((params: Params) => {
+            this.qId = +params["id"];
 
-        /*type) QA Game
+            console.log("Hallo " + this.qId);
 
-        this.route.params
-         .map(params => params['id'])
-         .subscribe((id) => {
-             console.log(id);
-         });
-         */
+            this.questionService.getQuestion(this.uId, this.qId).subscribe(
+                data => this.question = data,
+                error => this.error = "error"
+            );
+        });
     }
 
     public getPercentage(count:any){
@@ -66,6 +67,18 @@ export class QuestionComponent implements OnInit{
         let p = count * 100 / this.question.voteCount;
         return Math.round( p * 10) / 10;
     }
+
+    public nextQuestion() {
+
+        this.questionService.getNextQuestionId(this.uId).subscribe(
+            data => {
+                this.router.navigate(['/q/', data]);
+            },
+            error => this.error = "error"
+        );
+        //
+    }
+
 
     public setAnswer = (aId:any) => {
         let qId = this.route.snapshot.params.id;
@@ -90,5 +103,3 @@ export class QuestionComponent implements OnInit{
         );
     }
 }
-
-//questionService:QuestionService
