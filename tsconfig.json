@@ -12,17 +12,12 @@
   },
     "files": [
         "typings/index.d.ts",
-        "server/server.ts",
-        "server/routes/question.ts",
-        "server/routes/admin.ts",
-        "server/routes/arch.ts"
-
+        "frontend/node_modules/@angular/router/index.d.ts"
     ],
     "include": [
-        "public/app/*.ts",
-        "public/app/service/*.ts",
-        "public/app/component/*.ts",
-        "public/app/guards/*.ts"
+        "frontend/app/**/*",
+        "backend/**/*",
+        "shared/**/*"
 
     ],
     "exclude": [

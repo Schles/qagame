@@ -2,9 +2,6 @@ build/
 node_modules/
 public/libs/
 install
-public/app/components/*.js*
-public/app/service/*.js*
-public/app/guards/*.js*
-public/app/*.js*
-server/routes/*.js*
-server/*.js*
+frontend/app/**/*.js*
+backend/routes/*.js*
+backend/server.js*

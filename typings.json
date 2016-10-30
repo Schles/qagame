@@ -1,5 +1,9 @@
 {
   "globalDependencies": {
-    "hapi": "registry:dt/hapi#13.0.0+20160928135445"
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504",
+    "hapi": "registry:dt/hapi#13.0.0+20160928135445",
+    "mysql": "registry:dt/mysql#0.0.0+20160316155526",
+    "node": "registry:dt/node#6.0.0+20160928143418",
+    "q": "registry:dt/q#0.0.0+20161004185634"
   }
 }

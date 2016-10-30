@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>(Prototype) QuaG</title>
+    <base href="/">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="libs/system.js/dist/system.src.js"></script>
+     <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <!--<script src="node_modules/@angular/http/bundles/http.umd.js"></script>-->
+    <script src="config/systemjs.config.js"></script>
+    <script>
+      System.import('app').then(
+            function handleResolve() {
+                console.info( "System.js successfully bootstrapped app." );
+            },
+            function handleReject( error ) {
+                console.warn( "System.js could not bootstrap the app." );
+                console.error( error );
+            }
+        )
+        </script>
+  </head>
+  <!-- 3. Display the application -->
+  <body>
+
+    <qagame>QuaG is loading...</qagame>
+  </body>
+</html>
