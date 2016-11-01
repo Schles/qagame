@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="libs/system.js/dist/system.src.js"></script>
+    <!--<script src="libs/system.js/dist/system.src.js"></script>
      <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <!--<script src="node_modules/@angular/http/bundles/http.umd.js"></script>-->
     <script src="config/systemjs.config.js"></script>
+
     <script>
       System.import('app').then(
             function handleResolve() {
@@ -22,11 +22,15 @@
                 console.error( error );
             }
         )
-        </script>
+      </script>-->
+      <!--<script src="node_modules/@angular/http/bundles/http.umd.js"></script>-->
+
   </head>
   <!-- 3. Display the application -->
   <body>
-
     <qagame>QuaG is loading...</qagame>
   </body>
+  <script src="polyfills.js"></script>
+  <script src="vendor.js"></script>
+  <script src="app.js"></script>
 </html>

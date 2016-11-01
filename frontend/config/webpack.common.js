@@ -7,8 +7,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    //'polyfills': './src/polyfills.ts',
-    //'vendor': './src/vendor.ts',
+    'polyfills': './app/polyfills.browser.ts',
+    'vendor': './app/vendor.browser.ts',
     'app': './app/app.main.ts'
   },
 
@@ -48,15 +48,15 @@ module.exports = {
       */
     ]
   },
-/*
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: ['app', 'vendor', 'polyfills']
     }),
-
+/*
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'index.html'
     })
+*/
   ]
-  */
+
 };
